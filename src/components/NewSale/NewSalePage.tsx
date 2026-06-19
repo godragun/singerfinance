@@ -212,6 +212,8 @@ export const NewSalePage: React.FC = () => {
         term: row.term || overallTerm || 0,
       }));
 
+    const percentageRate = parseFloat((interestRate * 100).toFixed(2));
+
     const saleData = {
       invoiceNo,
       date,
@@ -223,7 +225,7 @@ export const NewSalePage: React.FC = () => {
       totalCashPrice,
       totalRental: totalRentalMonthly,
       term: overallTerm || 0,
-      interestRate,
+      interestRate: percentageRate,
     };
 
     setPrintSaleData(saleData);

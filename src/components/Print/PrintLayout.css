@@ -1,470 +1,179 @@
-/* Print Layout Styles - Optimized for Single Page A4 */
+/* src/components/Print/PrintLayout.css */
 
-.print-layout {
-  display: none;
-  width: 100%;
-  padding: 0;
-}
-
-/* A4 Page Format - TIGHT SPACING */
-.a4-invoice {
-  width: 210mm;
-  height: 297mm;
-  margin: 0 auto;
-  padding: 10mm 12mm;
-  background: white;
-  box-sizing: border-box;
-  font-family: 'Arial', 'Helvetica', sans-serif;
-  font-size: 10px;
-  line-height: 1.2;
-  color: #000;
-}
-
-/* Header */
-.invoice-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 8px;
-  border-bottom: 2px solid #000;
-  padding-bottom: 5px;
-}
-
-.invoice-title h2 {
-  margin: 0;
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.invoice-title p {
-  margin: 2px 0;
-  font-size: 9px;
-}
-
-.invoice-number {
-  text-align: right;
-  display: flex;
-  align-items: baseline;
-  gap: 5px;
-}
-
-.no-label {
-  font-size: 12px;
-  color: #c41e3a;
-  font-weight: bold;
-}
-
-.no-value {
-  font-size: 16px;
-  color: #c41e3a;
-  font-weight: bold;
-  min-width: 50px;
-}
-
-/* Customer Information - COMPACT */
-.customer-info {
-  margin-bottom: 6px;
-}
-
-.info-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-  gap: 5px;
-  font-size: 9px;
-}
-
-.info-row label {
-  font-weight: bold;
-  min-width: 110px;
-  font-size: 9px;
-}
-
-.info-row label:after {
-  content: ':';
-  margin-right: 3px;
-}
-
-.info-value {
-  border-bottom: 1px solid #000;
-  flex: 1;
-  padding: 1px 3px;
-  min-height: 10px;
-  font-size: 9px;
-}
-
-.epf-label {
-  margin-left: 10px;
-  font-weight: bold;
-  min-width: auto;
-  font-size: 9px;
-}
-
-.epf-label:after {
-  content: '';
-}
-
-.info-box {
-  border: 1px solid #000;
-  padding: 2px 4px;
-  min-width: 70px;
-  display: inline-block;
-  text-align: center;
-  min-height: 12px;
-  font-size: 9px;
-}
-
-.date-label {
-  margin-left: auto;
-  font-weight: bold;
-  min-width: auto;
-  font-size: 9px;
-}
-
-.date-label:after {
-  content: '';
-}
-
-.date-input {
-  border-bottom: 1px solid #000;
-  padding: 1px 3px;
-  min-width: 70px;
-  font-size: 9px;
-}
-
-/* Items Table - COMPACT */
-.items-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 5px;
-  border: 1px solid #000;
-  font-size: 9px;
-}
-
-.items-table thead {
-  background-color: #f5f5f5;
-}
-
-.items-table th {
-  border: 1px solid #000;
-  padding: 3px 2px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 8px;
-  line-height: 1.1;
-}
-
-.items-table td {
-  border: 1px solid #000;
-  padding: 4px 2px;
-  font-size: 8px;
-  min-height: 14px;
-  text-align: left;
-}
-
-.col-num {
-  width: 20px;
-  text-align: center;
-  padding: 3px 1px;
-}
-
-.col-item {
-  width: auto;
-  min-width: 60px;
-  font-size: 8px;
-}
-
-.col-model {
-  width: auto;
-  min-width: 60px;
-  font-size: 8px;
-}
-
-.col-cash-price {
-  width: 70px;
-  text-align: right;
-  padding-right: 4px;
-  font-size: 8px;
-}
-
-.col-rental {
-  width: 60px;
-  text-align: right;
-  padding-right: 4px;
-  font-size: 8px;
-}
-
-.col-term {
-  width: 45px;
-  text-align: center;
-  font-size: 8px;
-}
-
-/* Total Section */
-.total-section {
-  margin-bottom: 5px;
-}
-
-.total-row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 9px;
-}
-
-.total-label {
-  font-weight: bold;
-  min-width: 80px;
-  font-size: 9px;
-}
-
-.total-line {
-  flex: 1;
-  border-bottom: 1px solid #000;
-  height: 1px;
-}
-
-/* Summary Section - COMPACT */
-.summary-section {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.summary-left {
-  flex: 0 0 180px;
-}
-
-.summary-item {
-  margin-bottom: 10px;
-}
-
-.summary-item label {
-  display: block;
-  font-weight: bold;
-  font-size: 8px;
-  margin-bottom: 2px;
-  line-height: 1.1;
-}
-
-.summary-box {
-  border: 1px solid #000;
-  padding: 4px 3px;
-  display: block;
-  text-align: center;
-  min-height: 12px;
-  font-size: 8px;
-}
-
-.term-box,
-.rate-box {
-  display: flex;
-  border: 1px solid #000;
-  padding: 3px 2px;
-  font-size: 8px;
-}
-
-.term-value,
-.rate-value {
-  flex: 1;
-  text-align: center;
-  padding-right: 4px;
-  border-right: 1px solid #000;
-  font-size: 8px;
-}
-
-.term-unit,
-.rate-unit {
-  min-width: 20px;
-  text-align: center;
-  font-size: 8px;
-}
-
-.summary-right {
-  flex: 1;
-  display: flex;
-  gap: 8px;
-}
-
-.showroom-box,
-.company-box {
-  flex: 1;
-  border: 1px solid #000;
-  padding: 4px 3px;
-  font-size: 7px;
-  text-align: center;
-  line-height: 1.2;
-}
-
-.showroom-box p,
-.company-box p {
-  margin: 1px 0;
-  font-size: 7px;
-  line-height: 1.1;
-}
-
-.showroom-box p strong,
-.company-box p strong {
-  font-weight: bold;
-}
-
-/* Offer Letter Section - HIGHLY CONDENSED */
-.offer-letter-section {
-  font-size: 7px;
-  line-height: 1.1;
-  margin-top: 4px;
-}
-
-.offer-letter-section h3 {
-  text-align: center;
-  font-size: 8px;
-  font-weight: bold;
-  margin: 3px 0 2px 0;
-  text-decoration: underline;
-}
-
-.terms-list-compact {
-  margin: 2px 0 2px 15px;
-  padding: 0;
-  font-size: 7px;
-  line-height: 1.15;
-  list-style: none;
-}
-
-.terms-list-compact li {
-  margin-bottom: 0;
-  padding: 0;
-  font-size: 7px;
-  line-height: 1.2;
-  text-align: justify;
-}
-
-.terms-list-compact li strong {
-  font-weight: bold;
-}
-
-.general-conditions-compact {
-  margin: 2px 0;
-  padding: 0 5px;
-  font-size: 7px;
-  line-height: 1.15;
-  text-align: justify;
-}
-
-.general-conditions-compact strong {
-  font-weight: bold;
-}
-
-.validity-note {
-  margin: 2px 0;
-  font-size: 7px;
-  font-weight: bold;
-  line-height: 1.1;
-}
-
-/* PRINT MEDIA STYLES */
-@media print {
-  body {
-    margin: 0;
-    padding: 0;
-    background: white;
+@media screen {
+  .print-only-container {
+    display: none; /* Hidden on dashboard UI */
   }
-
-  .print-layout {
-    display: block !important;
-    margin: 0;
-    padding: 0;
-  }
-
-  .a4-invoice {
-    display: block !important;
-    width: 210mm;
-    height: 297mm;
-    margin: 0;
-    padding: 10mm 12mm;
-    box-shadow: none;
-    page-break-after: avoid;
-  }
-
-  /* Ensure all sub-elements are visible */
-  .invoice-header,
-  .customer-info,
-  .items-table,
-  .total-section,
-  .summary-section,
-  .offer-letter-section,
-  .invoice-header *,
-  .customer-info *,
-  .items-table *,
-  .total-section *,
-  .summary-section *,
-  .offer-letter-section * {
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  /* Reset flex for print */
-  .invoice-header,
-  .info-row,
-  .summary-section,
-  .summary-right {
-    display: flex !important;
-  }
-
-  table {
-    display: table !important;
-  }
-
-  thead {
-    display: table-header-group !important;
-  }
-
-  tbody {
-    display: table-row-group !important;
-  }
-
-  tr {
-    display: table-row !important;
-  }
-
-  td,
-  th {
-    display: table-cell !important;
-  }
-
-  ol {
-    display: block !important;
-  }
-
-  li {
-    display: list-item !important;
-  }
-
-  /* Prevent page breaks inside critical sections */
-  .items-table {
-    page-break-inside: avoid;
-  }
-
-  .summary-section {
-    page-break-inside: avoid;
-  }
-
-  .offer-letter-section {
-    page-break-inside: avoid;
-  }
-}
-
-/* Utility for hiding on screen but showing on print */
-.no-print {
-  display: block;
 }
 
 @media print {
-  .no-print {
+  /* Hide all dashboard layout elements */
+  html, body, #root, .no-print, header, nav, aside {
     display: none !important;
   }
 
-  .print-only {
-    display: block !important;
+  body {
+    background: #fff;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
   }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+
+  .print-only-container {
+    display: block !important;
+    width: 100%;
+  }
+
+  /* Utility styles to strictly match document styling */
+  .dotted-line {
+    border-bottom: 1px dotted #000;
+    display: inline-block;
+    flex-grow: 1;
+    margin-left: 4px;
+    padding-left: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+}
+
+/* Document Structure Styling */
+.document-frame {
+  border: 1px solid #333;
+  padding: 12px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.doc-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.company-title {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.company-address {
+  font-size: 11pt;
+  font-weight: normal;
+}
+
+.serial-number-block {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.serial-prefix {
+  color: #d32f2f;
+  font-size: 16pt;
+  font-weight: bold;
+  margin-right: 25px;
+}
+
+.serial-number {
+  color: #d32f2f;
+  font-size: 16pt;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Form Fields Grid */
+.field-row {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: flex-end;
+}
+
+/* Exact Table Outline styling */
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.invoice-table th, .invoice-table td {
+  border: 1px solid #000;
+  padding: 5px;
+  font-size: 9.5pt;
+  text-align: center;
+  height: 28px;
+}
+
+.invoice-table th {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+}
+
+.sub-header-cell {
+  font-size: 8pt !important;
+  padding: 1px !important;
+}
+
+/* Rubber Stamp Styling for Moratuwa Showroom */
+.stamp-box {
+  border: 2px dashed #5d4037;
+  color: #4a148c;
+  padding: 6px;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 9pt;
+  line-height: 1.2;
+  transform: rotate(-1deg);
+  max-width: 260px;
+  font-weight: bold;
+}
+
+.stamp-supplier {
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  border-bottom: 1px solid #4a148c;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Legal Conditions Footer */
+.offer-letter-title {
+  text-align: center;
+  font-size: 13pt;
+  font-weight: normal;
+  margin: 15px 0 10px 0;
+  text-decoration: underline;
+}
+
+.legal-section-title {
+  font-size: 10.5pt;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.legal-text {
+  font-size: 8.5pt;
+  text-align: justify;
+  line-height: 1.3;
+}
+
+.legal-list {
+  padding-left: 18px;
+  margin: 4px 0;
+}
+
+.legal-list li {
+  margin-bottom: 4px;
 }

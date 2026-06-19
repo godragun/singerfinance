@@ -52,7 +52,7 @@ export const SalesHistoryPage: React.FC = () => {
         totalCashPrice: sale.totalCashPrice,
         totalRental: sale.totalRentalMonthly,
         term: sale.overallTerm,
-        interestRate: sale.interestRate,
+        interestRate: parseFloat((sale.interestRate * 100).toFixed(2)),
       },
     });
     setTimeout(() => {
