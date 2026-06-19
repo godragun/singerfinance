@@ -78,13 +78,6 @@
   margin: 0 auto;
 }
 
-/* Invoice Border Box */
-.invoice-border {
-  border: 1.5px solid #000;
-  padding: 12px 14px;
-  margin-bottom: 6px;
-}
-
 /* Header */
 .invoice-header {
   display: flex;
@@ -199,37 +192,18 @@
   content: '';
 }
 
-.date-box-group {
-  display: flex;
+.date-input {
   border: 1px solid #000;
-  font-size: 8px;
-  background: white;
-}
-
-.date-seg {
-  width: 14px;
+  padding: 2px 8px;
+  min-width: 100px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  padding: 1px 0;
-  border-right: 1px solid #000;
-}
-
-.date-seg:last-child {
-  border-right: none;
-}
-
-.date-seg-label {
-  font-size: 4.5px;
-  color: #888;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.date-seg-value {
-  font-size: 8px;
   font-weight: bold;
-  line-height: 1.2;
+  font-size: 11px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
 }
 
 /* Items Table */
@@ -264,13 +238,15 @@
 .col-rental { text-align: right; padding-right: 6px !important; }
 .col-term { width: 45px; text-align: center; }
 
-/* Total Row */
+/* Total Section */
+.total-section {
+  margin-bottom: 10px;
+}
+
 .total-row {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 6px;
-  margin-bottom: 10px;
   font-size: 10px;
 }
 
@@ -280,13 +256,10 @@
   letter-spacing: 1px;
 }
 
-.total-underline {
-  width: 80px;
+.total-line {
+  flex: 1;
   border-bottom: 2.5px double #000;
-  text-align: right;
-  font-weight: bold;
-  font-size: 9px;
-  padding: 0 4px 2px;
+  height: 0;
 }
 
 /* Summary Section */
@@ -328,24 +301,21 @@
   background: white;
 }
 
-.term-group {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
 .term-box {
   border: 1px solid #000;
-  padding: 3px 8px;
-  width: 45px;
+  padding: 3px 4px;
   text-align: center;
   font-weight: bold;
   font-size: 11px;
   height: 22px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2px;
   background: white;
+}
+
+.term-value {
+  min-width: 20px;
 }
 
 .term-unit {
@@ -353,24 +323,21 @@
   font-size: 11px;
 }
 
-.rate-group {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
 .rate-box {
   border: 1px solid #000;
-  padding: 3px 8px;
-  width: 65px;
+  padding: 3px 4px;
   text-align: center;
   font-weight: bold;
   font-size: 10px;
   height: 22px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2px;
   background: white;
+}
+
+.rate-value {
+  min-width: 40px;
 }
 
 .rate-unit {
@@ -384,69 +351,37 @@
   gap: 10px;
 }
 
-.sig-box {
+.showroom-box {
   flex: 1;
   border: 1px solid #000;
-  padding: 6px 8px;
-  text-align: center;
+  padding: 4px 6px;
   font-size: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 70px;
   background: white;
 }
 
-.sig-box-title {
-  font-size: 7px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #666;
-  margin-bottom: auto;
-  text-align: left;
+.showroom-box p {
+  margin: 2px 0;
 }
 
-.sig-line {
-  border-top: 1px dotted #666;
-  padding-top: 3px;
-  font-weight: 600;
-  font-size: 7px;
-  color: #000;
-  margin-top: auto;
+.company-box {
+  flex: 1;
+  border: 1px solid #000;
+  padding: 4px 6px;
+  font-size: 8px;
+  background: white;
 }
 
-/* Stamp simulation */
-.stamp-area {
-  border: 1px dashed #6366f1;
-  padding: 4px;
-  margin: 4px 0;
-  text-align: center;
-  font-size: 7px;
-  font-weight: bold;
-  color: #4338ca;
-  text-transform: uppercase;
-  background: rgba(99, 102, 241, 0.05);
-  transform: rotate(-1deg);
-  max-width: 180px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-/* Double Divider */
-.double-divider {
-  border: none;
-  border-top: 3px double #000;
-  margin: 6px 0;
+.company-box p {
+  margin: 2px 0;
 }
 
 /* Offer Letter Section */
 .offer-letter-section {
   border: 1.5px solid #000;
-  padding: 10px 12px;
-  font-size: 8.5px;
-  line-height: 1.4;
+  padding: 8px 10px;
+  font-size: 8px;
+  line-height: 1.35;
+  margin-top: 6px;
 }
 
 .offer-letter-section h3 {
@@ -455,83 +390,30 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   text-decoration: underline;
 }
 
-.offer-content {
-  font-size: 8.5px;
-}
-
-.terms-grid {
-  display: grid;
-  grid-template-columns: auto auto 1fr;
-  gap: 1px 4px;
-  margin-bottom: 6px;
-  font-size: 8.5px;
-}
-
-.terms-grid .term-label {
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.terms-grid .term-colon {
-  padding-right: 4px;
-}
-
-.terms-grid .term-value {
-  font-weight: normal;
-}
-
-.security-list {
-  grid-column: span 3;
-  padding-left: 12px;
-  margin: 1px 0;
-}
-
-.general-conditions {
-  margin: 4px 0;
+.terms-list-compact {
+  margin: 0;
   padding-left: 16px;
-  font-size: 8.5px;
+  font-size: 8px;
+  line-height: 1.4;
 }
 
-.general-conditions li {
-  margin-bottom: 3px;
-  text-align: justify;
-  line-height: 1.35;
+.terms-list-compact li {
+  margin-bottom: 2px;
 }
 
-.offer-footer {
-  margin-top: 4px;
-  padding-top: 3px;
-  border-top: 1px solid #ccc;
-}
-
-.offer-footer p {
+.general-conditions-compact {
   margin: 3px 0;
-  font-size: 8.5px;
+  font-size: 8px;
+  line-height: 1.35;
+  text-align: justify;
 }
 
-.signature-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 8px;
-}
-
-.signature-footer .left {
-  font-size: 8.5px;
-}
-
-.signature-footer .right {
-  text-align: center;
-}
-
-.signature-footer .right .line {
-  border-top: 1px solid #000;
-  width: 200px;
-  padding-top: 2px;
-  font-weight: bold;
+.validity-note {
+  margin: 3px 0 0;
+  font-weight: 600;
   font-size: 8px;
 }

@@ -49,7 +49,7 @@ export const NewSalePage: React.FC = () => {
   const [rows, setRows] = useState<RowState[]>(initialRows());
   const [overallTerm, setOverallTerm] = useState<number | undefined>(undefined);
   const [interestRate, setInterestRate] = useState<number>(0);
-  const [printSaleData, setPrintSaleData] = useState<Partial<Sale> | null>(null);
+  const [printSaleData, setPrintSaleData] = useState<any>(null);
 
   useEffect(() => {
     setInvoiceNo(generateNextInvoiceNo());
@@ -212,18 +212,17 @@ export const NewSalePage: React.FC = () => {
         term: row.term || overallTerm || 0,
       }));
 
-    const saleData: Partial<Sale> = {
+    const saleData = {
       invoiceNo,
       date,
       epfNumber: epfNumber || formValues.epfNumber || '',
       customerName: customerName || formValues.customerName || '',
       institution: institution || formValues.institution || '',
       contactNumber: contactNumber || formValues.contactNumber || '',
-      nic: nic || formValues.nic || '',
       items: saleItems,
       totalCashPrice,
-      totalRentalMonthly,
-      overallTerm: overallTerm || 0,
+      totalRental: totalRentalMonthly,
+      term: overallTerm || 0,
       interestRate,
     };
 
