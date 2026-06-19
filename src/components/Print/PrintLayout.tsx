@@ -44,17 +44,19 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
           <div className="company-address">No. 498, R. A. De Mel Mawatha, Colombo 03. Tel : 0112 400 400</div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '12px', marginTop: '4px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '16px', marginTop: '6px' }}>
           <div>
             <div className="field-row">
               <span style={{ width: '90px' }}>Institution</span>:
               <span className="dotted-line">{saleData.institution}</span>
             </div>
             <div className="field-row">
-              <span style={{ fontSize: '8pt' }}>Customer Name</span>:
-              <span className="dotted-line" style={{ flex: '0.5' }}>{saleData.customerName}</span>
-              <span style={{ fontSize: '8pt', marginLeft: '8px' }}>Contact Number</span>:
-              <span className="dotted-line" style={{ flex: '0.4' }}>{saleData.contactNumber}</span>
+              <span style={{ width: '90px' }}>Customer Name</span>:
+              <span className="dotted-line">{saleData.customerName}</span>
+            </div>
+            <div className="field-row">
+              <span style={{ width: '90px' }}>Contact Number</span>:
+              <span className="dotted-line">{saleData.contactNumber}</span>
             </div>
           </div>
 
@@ -65,7 +67,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
                 {saleData.epfNumber}
               </span>
             </div>
-            <div className="field-row" style={{ marginTop: '4px' }}>
+            <div className="field-row" style={{ marginTop: '7px' }}>
               <span style={{ width: '75px' }}>Date</span>:
               <span className="dotted-line" style={{ textAlign: 'center' }}>
                 {saleData.date ? new Date(saleData.date).toLocaleDateString('en-GB') : 'DD / MM / YYYY'}
@@ -104,7 +106,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
               </tr>
             ))}
             <tr>
-              <td colSpan={3} style={{ border: 'none', textAlign: 'right', paddingRight: '8px', fontWeight: 'bold', fontSize: '7pt' }}>TOTAL</td>
+              <td colSpan={3} style={{ border: 'none', textAlign: 'right', paddingRight: '8px', fontWeight: 'bold', fontSize: '8pt' }}>TOTAL</td>
               <td style={{ textAlign: 'right', paddingRight: '6px', fontWeight: 'bold' }}>
                 {saleData.totalCashPrice.toLocaleString([], { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </td>
@@ -114,23 +116,23 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
           </tbody>
         </table>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr 1fr', gap: '10px', marginTop: '8px', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr 1fr', gap: '12px', marginTop: '14px', alignItems: 'start' }}>
           <div>
-            <div className="field-row" style={{ marginBottom: '3px' }}>
-              <span style={{ fontSize: '7pt', width: '70px' }}>Total Rental<br />(Monthly)</span>
-              <span className="dotted-line" style={{ border: '1px solid #000', height: '20px', textAlign: 'center', lineHeight: '20px' }}>
+            <div className="field-row" style={{ marginBottom: '5px' }}>
+              <span style={{ fontSize: '8pt', width: '75px' }}>Total Rental<br />(Monthly)</span>
+              <span className="dotted-line" style={{ border: '1px solid #000', height: '22px', textAlign: 'center', lineHeight: '22px' }}>
                 {saleData.totalRental.toLocaleString([], { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </span>
             </div>
-            <div className="field-row" style={{ marginBottom: '3px' }}>
-              <span style={{ fontSize: '8pt', width: '70px' }}>Term</span>
-              <span className="dotted-line" style={{ border: '1px solid #000', height: '18px', textAlign: 'center', lineHeight: '18px', position: 'relative' }}>
+            <div className="field-row" style={{ marginBottom: '5px' }}>
+              <span style={{ fontSize: '9pt', width: '75px' }}>Term</span>
+              <span className="dotted-line" style={{ border: '1px solid #000', height: '20px', textAlign: 'center', lineHeight: '20px', position: 'relative' }}>
                 {saleData.term} <span style={{ position: 'absolute', right: '3px', top: '0', fontSize: '7pt', borderLeft: '1px solid #000', paddingLeft: '3px' }}>M</span>
               </span>
             </div>
             <div className="field-row">
-              <span style={{ fontSize: '7pt', width: '70px' }}>Interest Rate<br />(Nominal)</span>
-              <span className="dotted-line" style={{ border: '1px solid #000', height: '18px', textAlign: 'center', lineHeight: '18px', position: 'relative' }}>
+              <span style={{ fontSize: '8pt', width: '75px' }}>Interest Rate<br />(Nominal)</span>
+              <span className="dotted-line" style={{ border: '1px solid #000', height: '20px', textAlign: 'center', lineHeight: '20px', position: 'relative' }}>
                 {saleData.interestRate} <span style={{ position: 'absolute', right: '3px', top: '0', fontSize: '7pt', borderLeft: '1px solid #000', paddingLeft: '3px' }}>%</span>
               </span>
             </div>
@@ -146,7 +148,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
             </div>
           </div>
 
-          <div style={{ border: '1px solid #000', height: '65px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8pt', textAlign: 'center', padding: '4px' }}>
+          <div style={{ border: '1px solid #000', height: '75px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '9pt', textAlign: 'center', padding: '6px' }}>
             Singer Finance (Lanka) PLC
           </div>
         </div>
@@ -154,7 +156,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
 
       <div className="offer-letter-title">Offer Letter Group sale Facility</div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '110px 6px 1fr', rowGap: '2px', fontSize: '8pt', marginBottom: '4px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '110px 6px 1fr', rowGap: '3px', fontSize: '8pt', marginBottom: '6px' }}>
         <div>1. Facility Amount</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
         <div>2. Rental</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
         <div>3. Interest Rate</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
@@ -176,13 +178,13 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
         <li>Singer finance is not liable for the defects or title of the items described in the invoice and defects of the item or title of the ownership of the item will not be affected to the repayment of the monthly instalments.</li>
       </ol>
 
-      <div className="legal-text" style={{ marginTop: '4px', fontWeight: 'bold' }}>This offer is valid only for 07 days.</div>
-      <div className="legal-text" style={{ marginTop: '2px' }}>Please return the attached copy of this letter duly signed thereby indicating your understanding and acceptance of the terms and condition under which this facility is granted and of the security which is stipulated herein.</div>
-      <div className="legal-text" style={{ marginTop: '2px' }}>We look forward to a mutually beneficial relationship.</div>
+      <div className="legal-text" style={{ marginTop: '6px', fontWeight: 'bold' }}>This offer is valid only for 07 days.</div>
+      <div className="legal-text" style={{ marginTop: '4px' }}>Please return the attached copy of this letter duly signed thereby indicating your understanding and acceptance of the terms and condition under which this facility is granted and of the security which is stipulated herein.</div>
+      <div className="legal-text" style={{ marginTop: '4px' }}>We look forward to a mutually beneficial relationship.</div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', fontSize: '8pt' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '14px', fontSize: '9pt' }}>
         <div>Your faithfully,<br /><strong>Singer Finance (Lanka) PLC</strong></div>
-        <div style={{ borderTop: '1px dashed #000', width: '200px', textAlign: 'center', paddingTop: '4px', marginTop: '16px' }}>Accepted the terms and conditions of the facility</div>
+        <div style={{ borderTop: '1px dashed #000', width: '220px', textAlign: 'center', paddingTop: '4px', marginTop: '20px' }}>Accepted the terms and conditions of the facility</div>
       </div>
     </div>
   );
