@@ -6,7 +6,10 @@ import type { Item } from '../types';
 
 export const useItems = () => {
   const { user } = useAuth();
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<Item[]>(() => {
+    const local = localStorage.getItem('sf_items');
+    return local ? JSON.parse(local) : [];
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -30,6 +33,7 @@ export const useItems = () => {
         });
         // Sort items alphabetically by modelNumber
         list.sort((a, b) => a.modelNumber.localeCompare(b.modelNumber));
+        localStorage.setItem('sf_items', JSON.stringify(list));
         setItems(list);
         setLoading(false);
       },
@@ -45,15 +49,29 @@ export const useItems = () => {
 
   const addItem = async (item: Item) => {
     if (!user) throw new Error('User not authenticated');
-    // modelNumber is the unique string (primary key)
-    const docRef = doc(db, 'users', user.uid, 'items', item.modelNumber.toUpperCase());
-    await setDoc(docRef, { ...item, modelNumber: item.modelNumber.toUpperCase() });
+    const normalizedItem = { ...item, modelNumber: item.modelNumber.toUpperCase() };
+    const docRef = doc(db, 'users', user.uid, 'items', normalizedItem.modelNumber);
+    await setDoc(docRef, normalizedItem);
+
+    setItems((prev) => {
+      const updated = [...prev.filter(it => it.modelNumber !== normalizedItem.modelNumber), normalizedItem];
+      updated.sort((a, b) => a.modelNumber.localeCompare(b.modelNumber));
+      localStorage.setItem('sf_items', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   const deleteItem = async (modelNumber: string) => {
     if (!user) throw new Error('User not authenticated');
-    const docRef = doc(db, 'users', user.uid, 'items', modelNumber.toUpperCase());
+    const upperModel = modelNumber.toUpperCase();
+    const docRef = doc(db, 'users', user.uid, 'items', upperModel);
     await deleteDoc(docRef);
+
+    setItems((prev) => {
+      const updated = prev.filter((it) => it.modelNumber !== upperModel);
+      localStorage.setItem('sf_items', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   const bulkAddItems = async (itemList: Item[]) => {
@@ -72,6 +90,18 @@ export const useItems = () => {
       
       await batch.commit();
     }
+
+    setItems((prev) => {
+      const map = new Map(prev.map(it => [it.modelNumber, it]));
+      itemList.forEach(item => {
+        const normalized = { ...item, modelNumber: item.modelNumber.toUpperCase() };
+        map.set(normalized.modelNumber, normalized);
+      });
+      const updated = Array.from(map.values());
+      updated.sort((a, b) => a.modelNumber.localeCompare(b.modelNumber));
+      localStorage.setItem('sf_items', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   const clearAllItems = async () => {
@@ -92,6 +122,9 @@ export const useItems = () => {
       
       await batch.commit();
     }
+
+    setItems([]);
+    localStorage.removeItem('sf_items');
   };
 
   return { items, loading, error, addItem, deleteItem, bulkAddItems, clearAllItems };

@@ -80,14 +80,14 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ activeTab, setActiveTab, c
   ];
 
   return (
-    <Layout className="min-h-screen bg-slate-50 no-print">
+    <Layout className="min-h-screen bg-slate-50">
       {/* Sidebar Sider */}
       <Sider
         trigger={null}
         collapsible
         collapsed={collapsed}
         theme="dark"
-        className="shadow-xl bg-slate-900 border-r border-slate-800"
+        className="shadow-xl bg-slate-900 border-r border-slate-800 no-print"
         width={240}
       >
         <div className="h-16 flex items-center justify-center border-b border-slate-800 gap-2 px-4 overflow-hidden">
@@ -114,7 +114,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ activeTab, setActiveTab, c
       {/* Main Layout Area */}
       <Layout>
         {/* Header */}
-        <Header className="bg-white px-6 border-b border-slate-200/80 flex items-center justify-between h-16 shadow-sm">
+        <Header className="bg-white px-6 border-b border-slate-200/80 flex items-center justify-between h-16 shadow-sm no-print">
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}

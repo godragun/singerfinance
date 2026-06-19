@@ -6,7 +6,10 @@ import type { Sale } from '../types';
 
 export const useSales = () => {
   const { user } = useAuth();
-  const [sales, setSales] = useState<Sale[]>([]);
+  const [sales, setSales] = useState<Sale[]>(() => {
+    const local = localStorage.getItem('sf_sales');
+    return local ? JSON.parse(local) : [];
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -28,6 +31,7 @@ export const useSales = () => {
         snapshot.forEach((doc) => {
           list.push({ id: doc.id, ...doc.data() } as Sale);
         });
+        localStorage.setItem('sf_sales', JSON.stringify(list));
         setSales(list);
         setLoading(false);
       },
@@ -53,12 +57,25 @@ export const useSales = () => {
     };
     
     await setDoc(docRef, completeSale);
+
+    setSales((prev) => {
+      const updated = [completeSale, ...prev.filter(s => s.invoiceNo !== completeSale.invoiceNo)];
+      updated.sort((a, b) => b.invoiceNo.localeCompare(a.invoiceNo));
+      localStorage.setItem('sf_sales', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   const deleteSale = async (id: string) => {
     if (!user) throw new Error('User not authenticated');
     const docRef = doc(db, 'users', user.uid, 'sales', id);
     await deleteDoc(docRef);
+
+    setSales((prev) => {
+      const updated = prev.filter((s) => s.invoiceNo !== id && s.id !== id);
+      localStorage.setItem('sf_sales', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   // Helper to generate the next invoice number based on local state (for real-time consistency)
