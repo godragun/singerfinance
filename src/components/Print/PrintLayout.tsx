@@ -47,28 +47,28 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '16px', marginTop: '6px' }}>
           <div>
             <div className="field-row">
-              <span style={{ width: '90px' }}>Institution</span>:
+              <span style={{ width: '110px', whiteSpace: 'nowrap' }}>Institution</span>: 
               <span className="dotted-line">{saleData.institution}</span>
             </div>
             <div className="field-row">
-              <span style={{ width: '90px' }}>Customer Name</span>:
+              <span style={{ width: '110px', whiteSpace: 'nowrap' }}>Customer Name</span>:
               <span className="dotted-line">{saleData.customerName}</span>
             </div>
             <div className="field-row">
-              <span style={{ width: '90px' }}>Contact Number</span>:
+              <span style={{ width: '110px', whiteSpace: 'nowrap' }}>Contact Number</span>:
               <span className="dotted-line">{saleData.contactNumber}</span>
             </div>
           </div>
 
           <div>
             <div className="field-row">
-              <span style={{ width: '75px' }}>EPF Number</span>:
+              <span style={{ width: '90px', whiteSpace: 'nowrap' }}>EPF Number</span>:
               <span className="dotted-line" style={{ border: '1px solid #000', height: '18px', padding: '2px 5px' }}>
                 {saleData.epfNumber}
               </span>
             </div>
             <div className="field-row" style={{ marginTop: '7px' }}>
-              <span style={{ width: '75px' }}>Date</span>:
+              <span style={{ width: '90px', whiteSpace: 'nowrap' }}>Date</span>:
               <span className="dotted-line" style={{ textAlign: 'center' }}>
                 {saleData.date ? new Date(saleData.date).toLocaleDateString('en-GB') : 'DD / MM / YYYY'}
               </span>
