@@ -49,7 +49,7 @@
 }
 .stamp-supplier { font-size: 6pt; text-transform: uppercase; border-bottom: 1px solid #4a148c; display: block; margin-bottom: 1px; }
 
-.offer-letter-title { text-align: center; font-size: 11pt; margin: 8px 0 4px 0; text-decoration: underline; }
+.offer-letter-title { text-align: center; font-size: 11pt; margin: 14px 0 4px 0; text-decoration: underline; }
 .legal-section-title { font-size: 9pt; text-decoration: underline; font-weight: bold; margin: 4px 0 2px 0; }
 .legal-text { font-size: 7.5pt; text-align: justify; line-height: 1.05; }
 .legal-list { padding-left: 16px; margin: 0; }
