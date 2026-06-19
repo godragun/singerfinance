@@ -51,12 +51,10 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
               <span className="dotted-line">{saleData.institution}</span>
             </div>
             <div className="field-row">
-              <span style={{ width: '70px', fontSize: '4pt' }}>Customer Name</span>:
-              <span className="dotted-line">{saleData.customerName}</span>
-            </div>
-            <div className="field-row">
-              <span style={{ width: '70px', fontSize: '4pt' }}>Contact Number</span>:
-              <span className="dotted-line">{saleData.contactNumber}</span>
+              <span style={{ fontSize: '4pt' }}>Customer Name</span>:
+              <span className="dotted-line" style={{ flex: '0.55' }}>{saleData.customerName}</span>
+              <span style={{ fontSize: '4pt', marginLeft: '6px' }}>Contact Number</span>:
+              <span className="dotted-line" style={{ flex: '0.4' }}>{saleData.contactNumber}</span>
             </div>
           </div>
 
