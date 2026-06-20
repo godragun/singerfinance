@@ -154,37 +154,41 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
         </div>
       </div>
 
-      <div className="offer-letter-title">Offer Letter Group sale Facility</div>
+      <div className="document-frame">
+        <div className="offer-letter-title">Offer Letter Group sale Facility</div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '110px 6px 1fr', rowGap: '3px', fontSize: '8pt', marginBottom: '6px' }}>
-        <div>1. Facility Amount</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
-        <div>2. Rental</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
-        <div>3. Interest Rate</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
-        <div>4. Default Rate</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>Not Applicable</div>
-        <div style={{ fontWeight: 'bold', gridColumn: 'span 3' }}>5. Security Offered,</div>
-        <div style={{ paddingLeft: '16px', gridColumn: 'span 3' }}>(i) Items describe in the invoice</div>
-        <div style={{ paddingLeft: '16px', gridColumn: 'span 3' }}>(ii) Personal guarantee of two employees in the institute</div>
-        <div>6. Due date</div><div>:</div><div style={{ fontWeight: 'bold' }}>Informing via SMS</div>
-      </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '110px 6px 1fr', rowGap: '3px', fontSize: '8pt', marginBottom: '6px' }}>
+          <div>1. Facility Amount</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
+          <div>2. Rental</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
+          <div>3. Interest Rate</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
+          <div>4. Default Rate</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>Not Applicable</div>
+          <div style={{ fontWeight: 'bold', gridColumn: 'span 3' }}>5. Security Offered,</div>
+          <div style={{ paddingLeft: '16px', gridColumn: 'span 3' }}>(i) Items describe in the invoice</div>
+          <div style={{ paddingLeft: '16px', gridColumn: 'span 3' }}>(ii) Personal guarantee of two employees in the institute</div>
+          <div>6. Due date</div><div>:</div><div style={{ fontWeight: 'bold' }}>Informing via SMS</div>
+        </div>
 
-      <div className="legal-section-title">General Conditions</div>
-      <ol className="legal-list legal-text">
-        <li>We reserve the right to include/pass on any new taxes/levies imposed by the government by time to time.</li>
-        <li>If the customer changes the current employment should be notified to the Singer Finance (Lanka) PLC.</li>
-        <li>The company reserves the right to review facility at its sole discretion from time to time and discontinue or vary the terms and conditions relating thereto including but not limited to the interest in default.</li>
-        <li>The facilities hereunder shall be available to you only on perfection of the security documents.</li>
-        <li>In addition to the above stated terms and conditions, the facility contains herein shall be subject to all clauses, terms and condition stipulated in the agreement and other contractual documents already executed by you and any other documents which may be required to be executed by you in the future.</li>
-        <li>All expenses, stamp duty, legal and other charges in this connection will be borne by you.</li>
-        <li>Singer finance is not liable for the defects or title of the items described in the invoice and defects of the item or title of the ownership of the item will not be affected to the repayment of the monthly instalments.</li>
-      </ol>
+        <div className="legal-section-title">General Conditions</div>
+        <ol className="legal-list legal-text">
+          <li>We reserve the right to include/pass on any new taxes/levies imposed by the government by time to time.</li>
+          <li>If the customer changes the current employment should be notified to the Singer Finance (Lanka) PLC.</li>
+          <li>The company reserves the right to review facility at its sole discretion from time to time and discontinue or vary the terms and conditions relating thereto including but not limited to the interest in default.</li>
+          <li>The facilities hereunder shall be available to you only on perfection of the security documents.</li>
+          <li>In addition to the above stated terms and conditions, the facility contains herein shall be subject to all clauses, terms and condition stipulated in the agreement and other contractual documents already executed by you and any other documents which may be required to be executed by you in the future.</li>
+          <li>All expenses, stamp duty, legal and other charges in this connection will be borne by you.</li>
+          <li>Singer finance is not liable for the defects or title of the items described in the invoice and defects of the item or title of the ownership of the item will not be affected to the repayment of the monthly instalments.</li>
+        </ol>
 
-      <div className="legal-text" style={{ marginTop: '6px', fontWeight: 'bold' }}>This offer is valid only for 07 days.</div>
-      <div className="legal-text" style={{ marginTop: '4px' }}>Please return the attached copy of this letter duly signed thereby indicating your understanding and acceptance of the terms and condition under which this facility is granted and of the security which is stipulated herein.</div>
-      <div className="legal-text" style={{ marginTop: '4px' }}>We look forward to a mutually beneficial relationship.</div>
+        <div className="legal-text" style={{ marginTop: '6px', fontWeight: 'bold' }}>This offer is valid only for 07 days.</div>
+        <div className="legal-text" style={{ marginTop: '4px' }}>Please return the attached copy of this letter duly signed thereby indicating your understanding and acceptance of the terms and condition under which this facility is granted and of the security which is stipulated herein.</div>
+        <div className="legal-text" style={{ marginTop: '4px' }}>We look forward to a mutually beneficial relationship.</div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '14px', fontSize: '9pt' }}>
-        <div>Your faithfully,<br /><strong>Singer Finance (Lanka) PLC</strong></div>
-        <div style={{ borderTop: '1px dashed #000', width: '220px', textAlign: 'center', paddingTop: '4px', marginTop: '20px' }}>Accepted the terms and conditions of the facility</div>
+        <div style={{ marginTop: '14px', fontSize: '9pt' }}>
+          <div>Your faithfully,<br /><strong>Singer Finance (Lanka) PLC</strong></div>
+          <div style={{ marginTop: '14px' }}>Accepted the terms and conditions of the facility</div>
+          <div style={{ borderTop: '1px dashed #000', marginTop: '6px', width: '60%' }}></div>
+          <div style={{ fontSize: '8pt', marginTop: '2px' }}>Signed by the customer</div>
+        </div>
       </div>
     </div>
   );
