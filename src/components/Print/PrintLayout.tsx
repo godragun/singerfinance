@@ -44,7 +44,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
           <div className="company-address">No. 498, R. A. De Mel Mawatha, Colombo 03. Tel : 0112 400 400</div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '10px', marginTop: '4px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '16px', marginTop: '6px' }}>
           <div>
             <div className="field-row">
               <span style={{ width: '110px', whiteSpace: 'nowrap' }}>Institution</span>: 
@@ -67,7 +67,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
                 {saleData.epfNumber}
               </span>
             </div>
-            <div className="field-row" style={{ marginTop: '6px' }}>
+            <div className="field-row" style={{ marginTop: '8px' }}>
               <span style={{ width: '90px', whiteSpace: 'nowrap' }}>Date</span>:
               <span className="dotted-line" style={{ textAlign: 'center' }}>
                 {saleData.date ? new Date(saleData.date).toLocaleDateString('en-GB') : 'DD / MM / YYYY'}
@@ -116,7 +116,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
           </tbody>
         </table>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr 1fr', gap: '8px', marginTop: '6px', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr 1fr', gap: '12px', marginTop: '12px', alignItems: 'start' }}>
           <div>
             <div className="field-row" style={{ marginBottom: '4px' }}>
               <span style={{ fontSize: '8pt', width: '75px' }}>Total Rental<br />(Monthly)</span>
@@ -148,7 +148,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
             </div>
           </div>
 
-          <div style={{ border: '1px solid #000', height: '75px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '9pt', textAlign: 'center', padding: '4px' }}>
+          <div style={{ border: '1px solid #000', height: '85px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '9pt', textAlign: 'center', padding: '4px' }}>
             Singer Finance (Lanka) PLC
           </div>
         </div>
@@ -157,7 +157,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
       <div className="document-frame">
         <div className="offer-letter-title">Offer Letter Group sale Facility</div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '110px 6px 1fr', rowGap: '2px', fontSize: '8.5pt', marginBottom: '4px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '110px 6px 1fr', rowGap: '4px', fontSize: '8.5pt', marginBottom: '8px' }}>
           <div>1. Facility Amount</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
           <div>2. Rental</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
           <div>3. Interest Rate</div><div>:</div><div style={{ fontStyle: 'italic', color: '#555' }}>As mentioned in the Invoice</div>
@@ -168,7 +168,7 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
           <div>6. Due date</div><div>:</div><div style={{ fontWeight: 'bold' }}>Informing via SMS</div>
         </div>
 
-        <div className="legal-section-title">General Conditions</div>
+        <div className="legal-section-title" style={{ marginTop: '10px' }}>General Conditions</div>
         <ol className="legal-list legal-text">
           <li>We reserve the right to include/pass on any new taxes/levies imposed by the government by time to time.</li>
           <li>If the customer changes the current employment should be notified to the Singer Finance (Lanka) PLC.</li>
@@ -179,15 +179,15 @@ export const PrintLayout: React.FC<PrintLayoutProps> = ({ saleData }) => {
           <li>Singer finance is not liable for the defects or title of the items described in the invoice and defects of the item or title of the ownership of the item will not be affected to the repayment of the monthly instalments.</li>
         </ol>
 
-        <div className="legal-text" style={{ marginTop: '4px', fontWeight: 'bold' }}>This offer is valid only for 07 days.</div>
-        <div className="legal-text" style={{ marginTop: '2px' }}>Please return the attached copy of this letter duly signed thereby indicating your understanding and acceptance of the terms and condition under which this facility is granted and of the security which is stipulated herein.</div>
-        <div className="legal-text" style={{ marginTop: '2px' }}>We look forward to a mutually beneficial relationship.</div>
+        <div className="legal-text" style={{ marginTop: '8px', fontWeight: 'bold' }}>This offer is valid only for 07 days.</div>
+        <div className="legal-text" style={{ marginTop: '4px' }}>Please return the attached copy of this letter duly signed thereby indicating your understanding and acceptance of the terms and condition under which this facility is granted and of the security which is stipulated herein.</div>
+        <div className="legal-text" style={{ marginTop: '4px' }}>We look forward to a mutually beneficial relationship.</div>
 
-        <div style={{ marginTop: '8px', fontSize: '9pt' }}>
+        <div style={{ marginTop: '12px', fontSize: '9pt' }}>
           <div>Your faithfully,<br /><strong>Singer Finance (Lanka) PLC</strong></div>
-          <div style={{ marginTop: '8px' }}>Accepted the terms and conditions of the facility</div>
+          <div style={{ marginTop: '12px' }}>Accepted the terms and conditions of the facility</div>
           <div style={{ borderTop: '1px dashed #000', marginTop: '3px', width: '60%' }}></div>
-          <div style={{ fontSize: '9pt', marginTop: '1px' }}>Signed by the customer</div>
+          <div style={{ fontSize: '9pt', marginTop: '2px' }}>Signed by the customer</div>
         </div>
       </div>
     </div>
