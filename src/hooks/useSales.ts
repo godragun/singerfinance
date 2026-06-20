@@ -80,19 +80,14 @@ export const useSales = () => {
 
   // Helper to generate the next invoice number based on local state (for real-time consistency)
   const generateNextInvoiceNo = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    const prefix = `SF-${year}${month}${day}-`;
+    const prefix = 'U ';
 
-    // Filter sales that match today's date prefix
-    const todaySales = sales.filter((s) => s.invoiceNo.startsWith(prefix));
+    const existing = sales.filter((s) => s.invoiceNo.startsWith(prefix));
     
     let nextNum = 1;
-    if (todaySales.length > 0) {
-      const numbers = todaySales.map((s) => {
-        const parts = s.invoiceNo.split('-');
+    if (existing.length > 0) {
+      const numbers = existing.map((s) => {
+        const parts = s.invoiceNo.split(' ');
         const lastPart = parts[parts.length - 1];
         const num = parseInt(lastPart, 10);
         return isNaN(num) ? 0 : num;
@@ -100,7 +95,7 @@ export const useSales = () => {
       nextNum = Math.max(...numbers) + 1;
     }
 
-    return `${prefix}${String(nextNum).padStart(3, '0')}`;
+    return `${prefix}${String(nextNum).padStart(4, '0')}`;
   };
 
   return { sales, loading, error, addSale, deleteSale, generateNextInvoiceNo };
