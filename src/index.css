@@ -24,3 +24,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Hide Vercel preview deployment badge */
+#__vercel-banner, #vercel-banner, [class*="vercel"], [id*="vercel"] { display: none !important; }
