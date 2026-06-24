@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Upload, Button, Space, Typography, Row, Col, Popconfirm, message } from 'antd';
+import type { UploadProps } from 'antd';
 import { 
   UploadOutlined, 
   DeleteOutlined, 
@@ -23,7 +24,7 @@ const DatabaseCard: React.FC<{
   uploadLabel: string;
   clearLabel: string;
   loading: boolean;
-  onUpload: (file: File) => false | void;
+  onUpload: NonNullable<UploadProps['beforeUpload']>;
   onClear: () => void;
   onDownloadTemplate: () => void;
 }> = ({
@@ -115,7 +116,7 @@ export const DataManagement: React.FC = () => {
   const [itemLoading, setItemLoading] = useState(false);
   
   // Custom helper to parse and validate customer files
-  const handleCustomerUpload = async (file: File) => {
+  const handleCustomerUpload: NonNullable<UploadProps['beforeUpload']> = (file) => {
     setCustLoading(true);
     const reader = new FileReader();
     
@@ -174,7 +175,7 @@ export const DataManagement: React.FC = () => {
   };
 
   // Custom helper to parse and validate item files
-  const handleItemUpload = async (file: File) => {
+  const handleItemUpload: NonNullable<UploadProps['beforeUpload']> = (file) => {
     setItemLoading(true);
     const reader = new FileReader();
     
